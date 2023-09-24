@@ -1,5 +1,4 @@
-#include "stack_ctor_dtor.h"
-#include "function.h"
+#include "stack.h"
 
 int main ()
 {
@@ -7,15 +6,25 @@ int main ()
 
     stack_ctor (&stack, 5);
 
-    for (size_t i = 0; i < 7; i++)
+    assert_stack (&stack);
+
+    for (int i = 0; i < 7; i++)
     {
         stack_push (&stack, (Element) i);
     }
 
-    for (size_t i = 0; i < 7; i++)
+    stack.data[-1] = 0;
+
+    assert_stack (&stack);
+
+    for (int i = 0; i < 7; i++)
     {
-        printf("%d\n", stack_pop (&stack));
-    }    
+        Element stack_elem = stack_pop(&stack);
+
+        printf ("%d\n", stack_elem);
+    }
+
+    assert_stack (&stack);
 
     stack_dtor (&stack);
 
