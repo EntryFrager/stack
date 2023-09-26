@@ -1,99 +1,21 @@
-ERROR: error when checking left canary
+ERROR: wrong stack position.
 
-stack[0064FEE0] "stk" called from stack.cpp(51) stack_push
+stack[0064FE50] "stk" called from stack.cpp(45) stack_ctor
 {
-	position = 0
+	stack->left_canary = deadbeef
+	fp_err_name = file_err.txt
+	fp_err[75E34660]
+	position = -1
 	size = 5
-	data[007E1594]
+	data[00E11594]
 	{
+		data->left_canary = deadbeef
 		*[0] = 0
 		*[1] = 0
 		*[2] = 0
 		*[3] = 0
 		*[4] = 0
+		data->right_canary = deadbeef
 	}
-}
-ERROR: error when checking left canary
-
-stack[0064FED4] "stk" called from main.cpp(18) main
-{
-	position = 7
-	size = 10
-	data[00A81594]
-	{
-		*[0] = 0
-		*[1] = 1
-		*[2] = 2
-		*[3] = 3
-		*[4] = 4
-		*[5] = 5
-		*[6] = 6
-		*[7] = 0
-		*[8] = 0
-		*[9] = 0
-	}
-}
-ERROR: error when checking left canary
-
-stack[0064FED4] "stk" called from main.cpp(18) main
-{
-	position = 7
-	size = 10
-	data[00B91594]
-	{
-		left canary = 0		*[0] = 0
-		*[1] = 1
-		*[2] = 2
-		*[3] = 3
-		*[4] = 4
-		*[5] = 5
-		*[6] = 6
-		*[7] = 0
-		*[8] = 0
-		*[9] = 0
-		right canary = -10	}
-}
-ERROR: error when checking left canary
-
-stack[0064FED4] "stk" called from main.cpp(18) main
-{
-	position = 7
-	size = 10
-	data[00671594]
-	{
-		left canary = 0
-		*[0] = 0
-		*[1] = 1
-		*[2] = 2
-		*[3] = 3
-		*[4] = 4
-		*[5] = 5
-		*[6] = 6
-		*[7] = 0
-		*[8] = 0
-		*[9] = 0
-		right canary = -10
-	}
-}
-ERROR: error when checking left canary
-
-stack[0064FED4] "stk" called from main.cpp(18) main
-{
-	position = 7
-	size = 10
-	data[00BB161C]
-	{
-		left canary = 0
-		*[0] = 0
-		*[1] = 1
-		*[2] = 2
-		*[3] = 3
-		*[4] = 4
-		*[5] = 5
-		*[6] = 6
-		*[7] = 0
-		*[8] = 0
-		*[9] = 0
-		right canary = -10
-	}
+	stack->right_canary = deadbeef
 }

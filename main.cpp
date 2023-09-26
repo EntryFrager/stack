@@ -13,8 +13,6 @@ int main ()
         stack_push (&stack, (Element) i);
     }
 
-    stack.data[-1] = 0;
-
     assert_stack (&stack);
 
     for (int i = 0; i < 7; i++)
