@@ -8,16 +8,16 @@ int main ()
 
     assert_stack (&stack);
 
-    for (int i = 0; i < 7; i++)
+    for (int i = 1000; i < 1007; i++)
     {
-        stack_push (&stack, (Element) i);
+        stack_push (&stack, (ELEMENT) i);
     }
 
     assert_stack (&stack);
 
     for (int i = 0; i < 7; i++)
     {
-        Element stack_elem = stack_pop(&stack);
+        ELEMENT stack_elem = stack_pop(&stack);
 
         printf ("%d\n", stack_elem);
     }
